@@ -41,10 +41,10 @@ import {
                 Authorization: `Bearer ${token}`,
               },
             }).then((roleResponse) => {
-              console.log("respuestas role:"+roleResponse.data.idRole);
+              console.log(roleResponse.data.idRole);
               window.localStorage.setItem('role', roleResponse.data.idRole);
               setRole(roleResponse.data.idRole);
-             
+              setIsAuthenticated(true);
             });
           } else {
             // Manejo de errores si no se inicia sesión correctamente

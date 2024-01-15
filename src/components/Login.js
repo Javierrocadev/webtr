@@ -66,9 +66,10 @@ const Login = () => {
         <br />
         <button type="submit">Login</button>
       </form>
-      {!isAuthenticated && (
+      {/* {!isAuthenticated && (
         <button onClick={logout}>Logout</button>
-      )}
+      )} */}
+       <button onClick={logout}>Logout</button>
     </div>
   );
 };

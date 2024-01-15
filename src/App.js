@@ -17,9 +17,10 @@ import Pag3 from "./components/Pag3";
 import Pag4 from "./components/Pag4";
 import Pag5 from "./components/Pag5";
 import Login from "./components/Login";
-localStorage.setItem("rol", 1);
-localStorage.setItem("token", 5321236213612);
+import NoAc from "./components/NoAc";
 
+import RouteAdmin from "./components/RouteAdmin";
+import RouteTr from "./components/RouteTr";
 const App = () => {
   return (
     <AuthContextProvider>
@@ -27,12 +28,15 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/pag1" element={<Pag1 />} />
-          <Route path="/pag2" element={<Pag2 />} />
-          <Route path="/pag3" element={<Pag3 />} />
+          <Route path="/pag1" element={<RouteAdmin path="/pag1" component={<Pag1/>} />} />
+          <Route path="/pag2" element={<RouteTr path="/pag2" component={<Pag2/>} />} />
+          <Route path="/pag3" element={<RouteAdmin path="/pag3" component={<Pag3/>} />} />
           <Route path="/pag4" element={<Pag4 />} />
           <Route path="/pag5" element={<Pag5 />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/403" element={<NoAc />} />
+         
+      
         </Routes>
       </Layout>
     </Router>
